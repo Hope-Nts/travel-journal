@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148832889054",
+    "project_id": "travel-journal-43313",
+    "storage_bucket": "travel-journal-43313.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148832889054:android:28267acc0ff84ac520fa4f",
+        "android_client_info": {
+          "package_name": "com.example.traveljournal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148832889054-olkraui3j4p6ab6e24hopgv7lqj885t5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnZDka6IkxFQtbOZDw3rJ8RRhRzAAk-MU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148832889054-olkraui3j4p6ab6e24hopgv7lqj885t5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
