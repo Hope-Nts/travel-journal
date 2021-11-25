@@ -64,29 +64,12 @@
         app:layout_constraintTop_toBottomOf="@+id/signIn_btn" />
 
     <TextView
-        android:id="@+id/singIn_twitter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="SignIn with Twitter"
-        app:layout_constraintStart_toStartOf="@+id/singIn_gmail"
-        app:layout_constraintTop_toBottomOf="@+id/singIn_gmail" />
-
-    <TextView
-        android:id="@+id/singIn_facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="SignIn with FaceBook"
-        app:layout_constraintStart_toStartOf="@+id/singIn_twitter"
-        app:layout_constraintTop_toBottomOf="@+id/singIn_twitter" />
-
-    <TextView
         android:id="@+id/singIn_singUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="New user? Sign Up"
-        app:layout_constraintStart_toStartOf="@+id/singIn_facebook"
-        app:layout_constraintTop_toBottomOf="@+id/singIn_facebook" />
+        app:layout_constraintEnd_toEndOf="@+id/singIn_gmail"
+        app:layout_constraintStart_toStartOf="@+id/singIn_gmail"
+        app:layout_constraintTop_toBottomOf="@+id/singIn_gmail" />
 </androidx.constraintlayout.widget.ConstraintLayout>
