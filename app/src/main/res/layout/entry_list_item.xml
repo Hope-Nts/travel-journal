@@ -1,54 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginBottom="15dp"
+    android:layout_height="180dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="25dp">
+
         <ImageView
+            android:id="@+id/entry_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
-            android:id="@+id/card_background"
-            android:background="@drawable/ic_launcher_background"/>
+            android:background="@drawable/testbanner" />
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="20dp">
 
             <TextView
-                android:id="@+id/card_title"
-                android:textSize="19sp"
-                android:textColor="@color/white"
+                android:id="@+id/entry_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_above="@id/entry_description"
                 android:layout_alignParentStart="true"
-                android:layout_above="@id/card_description"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/card_description"
+                android:id="@+id/entry_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="20dp"
-                android:width="250dp"
-                android:textColor="@color/white"
                 android:layout_alignParentBottom="true"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. " />
+                android:layout_marginTop="10dp"
+                android:width="250dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "
+                android:textColor="@color/white" />
+
             <TextView
-                android:id="@+id/card_date"
+                android:id="@+id/entry_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:textColor="@color/white"
-                android:layout_alignParentBottom="true"
-                android:text="20/12/2021" />
+                android:layout_alignParentTop="true"
+                android:text="20/12/2021"
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 
