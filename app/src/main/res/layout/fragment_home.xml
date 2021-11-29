@@ -37,6 +37,8 @@
                             app:boxCornerRadiusBottomEnd="40dp"
                             app:boxCornerRadiusBottomStart="40dp"
                             app:startIconDrawable="@drawable/ic_search"
+                            app:boxStrokeColor="@color/cardview_dark_background"
+                            app:boxBackgroundColor="@color/grey"
                             app:expandedHintEnabled="false"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_height="wrap_content"

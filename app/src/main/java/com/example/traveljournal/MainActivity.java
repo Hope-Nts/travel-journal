@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_add:
                         selectorFragment = null;
-                        startActivity(new Intent( MainActivity.this, JournalEntryActivity.class));
+                        startActivity(new Intent( MainActivity.this, AddJournalEntryActivity.class));
                         break;
                 }
                 if(selectorFragment != null){
