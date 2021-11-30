@@ -15,15 +15,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.traveljournal.Adapter.JournalEntryRecViewAdapter;
+import com.example.traveljournal.EntryRecyclerViewInterface;
 import com.example.traveljournal.MainActivity;
 import com.example.traveljournal.Model.JournalEntry;
 import com.example.traveljournal.R;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements EntryRecyclerViewInterface {
     private RecyclerView entryRecyclerView;
-
+    private Fragment selectedFragment;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -50,7 +51,7 @@ public class HomeFragment extends Fragment {
         entries.add(new JournalEntry("TestTitle", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. ", "27/11/2021"));
 
 
-        JournalEntryRecViewAdapter adapter = new JournalEntryRecViewAdapter();
+        JournalEntryRecViewAdapter adapter = new JournalEntryRecViewAdapter(this);
         adapter.setEntries(entries);
 
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
@@ -62,5 +63,11 @@ public class HomeFragment extends Fragment {
        return view;
 
 
+    }
+    //overriding interface method to open the entry details in the EntryFragment
+    @Override
+    public void onEntryClick(int position) {
+        selectedFragment =  new EntryFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
     }
 }

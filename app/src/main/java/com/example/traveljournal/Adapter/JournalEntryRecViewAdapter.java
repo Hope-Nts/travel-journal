@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.traveljournal.EntryRecyclerViewInterface;
 import com.example.traveljournal.Model.JournalEntry;
 import com.example.traveljournal.R;
 
@@ -16,18 +17,18 @@ import java.util.ArrayList;
 
 public class JournalEntryRecViewAdapter extends RecyclerView.Adapter<JournalEntryRecViewAdapter.ViewHolder> {
 
+    private final EntryRecyclerViewInterface entryRecyclerViewInterface;
     private ArrayList<JournalEntry> entries = new ArrayList<>();
 
-
-
-    public JournalEntryRecViewAdapter() {
+    public JournalEntryRecViewAdapter(EntryRecyclerViewInterface entryRecyclerViewInterface) {
+        this.entryRecyclerViewInterface = entryRecyclerViewInterface;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.entry_list_item, parent, false);
-        ViewHolder holder = new ViewHolder(view);
+        ViewHolder holder = new ViewHolder(view, entryRecyclerViewInterface);
         return holder;
     }
 
@@ -49,15 +50,28 @@ public class JournalEntryRecViewAdapter extends RecyclerView.Adapter<JournalEntr
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView entryImage;
         private TextView entryTitle, entryDescription, entryDate;
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView,EntryRecyclerViewInterface entryRecyclerViewInterface) {
             super(itemView);
             entryImage = itemView.findViewById(R.id.entry_background);
             entryTitle = itemView.findViewById(R.id.entry_title);
             entryDescription = itemView.findViewById(R.id.entry_description);
             entryDate = itemView.findViewById(R.id.entry_date);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(entryRecyclerViewInterface != null){
+                        int position = getAdapterPosition();
+
+                        if(position != RecyclerView.NO_POSITION){
+                            entryRecyclerViewInterface.onEntryClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

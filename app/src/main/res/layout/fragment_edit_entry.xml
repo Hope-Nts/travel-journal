@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.EditEntryFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back_button"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:id="@+id/title_entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Make New Entry"
+            android:layout_toRightOf="@id/back_button"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <ScrollView
+            android:layout_below="@id/title_entry"
+            android:layout_width="match_parent"
+            android:layout_height="600dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/add_photo_frame"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:id="@+id/entry_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/grey" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="20dp">
+
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Upload Photo"
+
+                            />
+                    </RelativeLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <RelativeLayout
+                    android:id="@+id/title_input_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_below="@id/add_photo_frame">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tile_label"
+                        android:textColor="@color/black"
+                        android:text="* Title"
+                        android:layout_marginBottom="5dp"
+                        />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/entry_title_input"
+                        android:layout_width="match_parent"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:expandedHintEnabled="false"
+                        android:focusedByDefault="false"
+                        android:layout_below="@id/tile_label"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:focusedByDefault="false"
+                            android:maxLines="1"
+                            android:scrollHorizontally="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/description_input_container"
+                    android:layout_width="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/title_input_container">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/description_label"
+                        android:textColor="@color/black"
+                        android:text="* Description"
+                        android:layout_marginBottom="5dp"
+                        />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/entry_description_input"
+                        android:layout_width="match_parent"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:expandedHintEnabled="false"
+
+                        android:focusedByDefault="false"
+                        android:layout_below="@id/description_label"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:focusedByDefault="false"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/body_input_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_below="@id/description_input_container">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/body_label"
+                        android:textColor="@color/black"
+                        android:text="* Body"
+                        android:layout_marginBottom="5dp"
+                        />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/entry_body_input"
+                        android:layout_width="match_parent"
+                        android:minHeight="100dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:expandedHintEnabled="false"
+                        android:focusedByDefault="false"
+                        android:layout_below="@id/body_label"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:inputType="text"
+                            android:focusedByDefault="false"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/add_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/body_input_container"
+                    android:layout_centerInParent="true"
+                    android:text="Add Entry"
+                    app:cornerRadius="7dp" />
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</FrameLayout>

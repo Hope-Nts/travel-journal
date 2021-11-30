@@ -9,7 +9,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingTop="25dp"
+        android:paddingRight="25dp"
+        android:paddingLeft="25dp">
 
         <RelativeLayout
             android:id="@+id/title_container"
